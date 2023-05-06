@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="image/x-icon" href="data:image/x-icon;,">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="style.css">
+    <title>Metamask Example</title>
+  </head>
+  <body>
+    <!-- <button id="connectButton">Connect to Metamask</button> -->
+
+    <script src="node_modules/web3/dist/web3.min.js"></script>
+    <script src="index.js"></script>
+    <!-- <script>
+      // Connect to Metamask on button click
+      document.getElementById("connectButton").addEventListener("click", async () => {
+        // Check if Web3 is available
+        if (typeof window.ethereum !== "undefined") {
+          // Request account access from user
+          await window.ethereum.request({ method: "eth_requestAccounts" });
+
+          // Get Web3 instance
+          const web3 = new Web3(window.ethereum);
+
+          // Get selected account
+          const accounts = await web3.eth.getAccounts();
+          const selectedAccount = accounts[0];
+
+          console.log(`Connected to Metamask account: ${selectedAccount}`);
+        } else {
+          console.error("Web3 not found!");
+        }
+      });
+    </script> -->
+    <section class="product__info">
+      <div class="container">
+          <h2 class="text-uppercase fs-5 mb-0">Thông tin sản phẩm</h2>
+          <div class="body">
+              <div class="row">
+                  <div class="col-lg-3 text-center">
+                      <p class="fw-bolder">Mã truy xuất: <span class="fw-normal" id="id_product"></span></p>
+                      <img src="./img/bonongnghiep.png" class="w-100" alt="bonongnghiep">
+                  </div>
+                  <div class="col-lg-9">
+                      <ul>
+                          <li class="fw-bolder">Tên sản phẩm: <span class="fw-normal">DÂU TÂY</span></li>
+                          <li class="fw-bolder">Nhà sản xuất: <span class="fw-normal">Minh Đạt</span></li>
+                          <li class="fw-bolder">Điện thoại: <span class="fw-normal">0335252609</span></li>
+                          <li class="fw-bolder">Địa chỉ: <span class="fw-normal">Thành phố Đà Lạt, Lâm Đồng, Việt Nam</span></li>
+                          <li class="fw-bolder">Giống loài: <span class="fw-normal">Newzealand</span></li>
+                          <li class="fw-bolder" id="price">Giá: <span class="fw-normal"></span></li>
+                          <li class="fw-bolder" id="date">Ngày thu hoạch: <span class="fw-normal"></span></li>
+                          <li class="fw-bolder" >Diện tích: <span class="fw-normal">400m2</span></li>
+                          <li class="fw-bolder">Hạn sử dụng: <span class="fw-normal">5 -7 NGÀY SAU THU HOẠCH</span></li>
+                          <li class="fw-bolder" id="weight">Qui cách đóng gói: <span class="fw-normal"></span></li>
+                          <li class="fw-bolder">Cách bảo quản <span class="fw-normal">Ngăn mát tủ lạnh</span></li>
+                          <li class="fw-bolder">Chức năng / công dụng sản phẩm: <span class="fw-normal">Thơm ngon và ngọt ngào, dâu tây giàu chất dinh dưỡng tự nhiên có lượng đường thấp, ít calo và mang lại nhiều lợi ích cho sức khỏe. Dâu tây giúp làm giảm triệu chứng của cảm lạnh và tăng cường hệ miễn dịch: Dâu tây rất giàu vitamin C, một vitamin đóng một vai trò quan trọng trong việc hỗ trợ một hệ miễn dịch khỏe mạnh. Mặc dù cơ thể của chúng ta không thể sản sinh ra vitamin C, chúng ta có thể bổ sung nó bằng cách ăn các thực phẩm như dâu tây. Ăn 8 quả dâu tây mỗi ngày cung cấp nhiều vitamin C hơn cả cam. Dâu tây giúp giảm lão hóa nhận thức: Sự suy giảm trí nhớ xảy ra khi chúng ta già đi nhưng nghiên cứu cho thấy ăn dâu tây có thể giúp làm chậm quá trình lão hóa nhận thức. Giúp giảm cholesterol và nguy cơ mắc bệnh tim mạch; với lượng Vitamin C chống oxy hóa mạnh mẽ trong dâu tây đã được chứng minh là làm giảm nguy cơ đục thủy tinh thể, rất tốt cho mắt; Dâu tây giúp chống viêm, Giảm nguy cơ ung thư...</span></li>
+                          <li class="fw-bolder" id="process">Qui trình sản xuất: <span class="fw-normal">Giống dâu tây được chọn lọc từ những nhà cung cấp uy tín và đảm bảo chất lượng. Cây dâu tây được phát triển trong môi trường nhà kính cung cấp đầy đủ chất dinh dưỡng và điều kiện sinh trưởng phù hợp nhất. Các điều kiện môi trường được thu thập và kiểm soát một cách chặt chẽ và linh hoạt. Quả dâu tây được thu hoạch khi vừa chín tới và được đóng hộp để tiêu thụ. 
+                            Người tiêu thụ có thể truy xuất nguồn gốc sản phẩm một cách minh bạch và chính xác thông qua mã QR được dán trên hộp sản phẩm nhờ tích hợp công nghệ Blockchain.
+                          </span></li>
+                      </ul>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </section>
+
+  <section class="product__img">
+      <div class="container">
+          <h2 class="text-uppercase fs-5 mb-0">Hình ảnh về sản phẩm</h2>
+          <div class="body">
+              <div class="row">
+                  <div class="col-6 col-md-3">
+                      <div class="product__img--wrap rounded">
+                          <img src="./img/product1.jpg" class="w-100" alt="product1">
+                      </div>
+                  </div>
+                  <!-- <div class="col-6 col-md-3">
+                      <div class="product__img--wrap rounded">
+                          <img src="" class="w-100" alt="product2">
+                      </div>
+                  </div> -->
+                  <div class="col-6 col-md-3">
+                      <div class="product__img--wrap rounded">
+                          <img src="./img/product3.jpg" class="w-100" alt="product3">
+                      </div>
+                  </div>
+                  <!-- <div class="col-6 col-md-3">
+                      <div class="product__img--wrap rounded">
+                          <img src="" class="w-100" alt="product4">
+                      </div>
+                  </div> -->
+              </div>
+          </div>
+      </div>
+  </section>
+
+  <section class="certificate">
+      <div class="container">
+          <h2 class="text-uppercase fs-5 mb-0">Giấy phép chứng nhận</h2>
+          <div class="body">
+              <div class="row">
+                  <!-- <div class="col-6 col-md-3">
+                      <div class="certificate__img rounded">
+                          <img src="./img/certificate-1.jpg" class="w-100" alt="certificate">
+                      </div>
+                  </div>
+                  <div class="col-6 col-md-3">
+                      <div class="certificate__img rounded">
+                          <img src="./img/certificate-2.jpg" class="w-100" alt="certificate">
+                      </div>
+                  </div> -->
+              </div>
+          </div>
+  </section>
+
+  <section class="product__description">
+      <div class="container">
+          <h2 class="text-uppercase fs-5 mb-0">Mô tả sản phẩm</h2>
+          <div class="body">
+              <p>DÂU TÂY ĐƯỢC SẢN XUẤT THEO QUY TRÌNH CÔNG NGHỆ CAO TRONG NHÀ KÍNH</p>
+          </div>
+      </div>
+  </section>
+
+  <footer>
+      <div class="container">
+          <h1 class="text-uppercase fs-3">SỞ NÔNG NGHIỆP VÀ PHÁT TRIỂN NÔNG THÔN TỈNH LÂM ĐỒNG</h1>
+          <p class="fw-semibold fs-5">Chi Cục quản lý chất lượng nông lâm sản và thủy sản</p>
+          <ul>
+              <li><i class="fa-solid fa-location-dot me-3"></i>Địa chỉ: <span>TP ĐÀ LAT, LÂM ĐỒNG, VIỆT NAM</span></li>
+              <li><i class="fa-solid fa-phone me-3"></i>Điện thoại: <span>0335.2526.09</span></li>
+              <li><i class="fa-solid fa-envelope me-3"></i>Email: <span>phamcongminh201100@gmail.com</span></li>
+          </ul>
+      </div>
+  </footer>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+  </body>
+</html>
