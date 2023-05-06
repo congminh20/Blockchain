@@ -9,32 +9,12 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="style.css">
     <title>Metamask Example</title>
+    <script src="https://cdn.rawgit.com/davidshimjs/qrcodejs/gh-pages/qrcode.min.js"></script>
   </head>
   <body>
-
+    
     <script src="https://cdn.jsdelivr.net/npm/web3@1.5.2/dist/web3.min.js"></script>
     <script src="index.js"></script>
-    <!-- <script>
-      // Connect to Metamask on button click
-      document.getElementById("connectButton").addEventListener("click", async () => {
-        // Check if Web3 is available
-        if (typeof window.ethereum !== "undefined") {
-          // Request account access from user
-          await window.ethereum.request({ method: "eth_requestAccounts" });
-
-          // Get Web3 instance
-          const web3 = new Web3(window.ethereum);
-
-          // Get selected account
-          const accounts = await web3.eth.getAccounts();
-          const selectedAccount = accounts[0];
-
-          console.log(`Connected to Metamask account: ${selectedAccount}`);
-        } else {
-          console.error("Web3 not found!");
-        }
-      });
-    </script> -->
     <section class="product__info">
       <div class="container">
           <h2 class="text-uppercase fs-5 mb-0">Thông tin sản phẩm</h2>
@@ -48,7 +28,7 @@
                       <ul>
                           <li class="fw-bolder">Tên sản phẩm: <span class="fw-normal">DÂU TÂY</span></li>
                           <li class="fw-bolder">Nhà sản xuất: <span class="fw-normal">Minh Đạt</span></li>
-                          <li class="fw-bolder">Điện thoại: <span class="fw-normal">0335252608</span></li>
+                          <li class="fw-bolder">Điện thoại: <span class="fw-normal">0335252609</span></li>
                           <li class="fw-bolder">Địa chỉ: <span class="fw-normal">Thành phố Đà Lạt, Lâm Đồng, Việt Nam</span></li>
                           <li class="fw-bolder">Giống loài: <span class="fw-normal">Newzealand</span></li>
                           <li class="fw-bolder" id="price">Giá: <span class="fw-normal"></span></li>
