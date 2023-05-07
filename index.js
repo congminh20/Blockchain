@@ -125,5 +125,9 @@ async function getContractData() {
   document.getElementById("weight").innerHTML = "Quy cách đóng gói: <span class='fw-normal'>" + "HỘP " + weight + " G" + "</span>";
 }
 
+const urlParams = new URLSearchParams(window.location.search);
+const date = urlParams.get('date');
+console.log(date);
+
 getContractData();
 
