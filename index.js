@@ -112,9 +112,10 @@ const abi = [
 ];
 
 const contract = new web3.eth.Contract(abi, contractAddress);
+const urlParams = new URLSearchParams(window.location.search);
 
 async function getContractData() {
-  const date = await contract.methods.getDate().call();
+  const date = urlParams.get('date');
   const id = await contract.methods.getId().call();
   const price = await contract.methods.getPrice().call();
   const weight = await contract.methods.getWeight().call();
@@ -125,9 +126,6 @@ async function getContractData() {
   document.getElementById("weight").innerHTML = "Quy cách đóng gói: <span class='fw-normal'>" + "HỘP " + weight + " G" + "</span>";
 }
 
-const urlParams = new URLSearchParams(window.location.search);
-const date = urlParams.get('date');
-console.log(date);
 
 getContractData();
 
