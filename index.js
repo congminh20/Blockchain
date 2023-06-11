@@ -2,18 +2,18 @@
 const infuraUrl = "https://goerli.infura.io/v3/e0f8271338ff475087bbc8999619eb8c"; // Thay your-project-id bằng project id của bạn
 const web3 = new Web3(new Web3.providers.HttpProvider(infuraUrl));
 
-const contractAddress = "0xceb8537f9Cb06d04A9bea41d8634F36Eb2eb8fF6";
+const contractAddress = "0xd74C6B0e02D92b6eC2789c0C7257C2320384C390";
 
 const abi = [
 	{
 		"inputs": [
 			{
 				"internalType": "string",
-				"name": "_date",
+				"name": "_newArea",
 				"type": "string"
 			}
 		],
-		"name": "setDate",
+		"name": "setArea",
 		"outputs": [],
 		"stateMutability": "nonpayable",
 		"type": "function"
@@ -22,11 +22,11 @@ const abi = [
 		"inputs": [
 			{
 				"internalType": "string",
-				"name": "_id",
+				"name": "_newBenefit",
 				"type": "string"
 			}
 		],
-		"name": "setId",
+		"name": "setBenefit",
 		"outputs": [],
 		"stateMutability": "nonpayable",
 		"type": "function"
@@ -34,9 +34,126 @@ const abi = [
 	{
 		"inputs": [
 			{
-				"internalType": "uint256",
-				"name": "_price",
-				"type": "uint256"
+				"internalType": "string",
+				"name": "_newExpire",
+				"type": "string"
+			}
+		],
+		"name": "setExpire",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "string",
+				"name": "_newHumidityAir",
+				"type": "string"
+			}
+		],
+		"name": "setHumidityAir",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "string",
+				"name": "_newHumiditySoil",
+				"type": "string"
+			}
+		],
+		"name": "setHumiditySoil",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "string",
+				"name": "_newKind",
+				"type": "string"
+			}
+		],
+		"name": "setKind",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "string",
+				"name": "_newLight",
+				"type": "string"
+			}
+		],
+		"name": "setLight",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "string",
+				"name": "_newLocation",
+				"type": "string"
+			}
+		],
+		"name": "setLocation",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "string",
+				"name": "_newName",
+				"type": "string"
+			}
+		],
+		"name": "setName",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "string",
+				"name": "_newPack",
+				"type": "string"
+			}
+		],
+		"name": "setPack",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "string",
+				"name": "_newPreserve",
+				"type": "string"
+			}
+		],
+		"name": "setPreserve",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "string",
+				"name": "_newPrice",
+				"type": "string"
 			}
 		],
 		"name": "setPrice",
@@ -47,19 +164,108 @@ const abi = [
 	{
 		"inputs": [
 			{
-				"internalType": "uint256",
-				"name": "_weight",
-				"type": "uint256"
+				"internalType": "string",
+				"name": "_newProcessProduce",
+				"type": "string"
 			}
 		],
-		"name": "setWeight",
+		"name": "setProcessProduce",
 		"outputs": [],
 		"stateMutability": "nonpayable",
 		"type": "function"
 	},
 	{
+		"inputs": [
+			{
+				"internalType": "string",
+				"name": "_newTemperature",
+				"type": "string"
+			}
+		],
+		"name": "setTemperature",
+		"outputs": [],
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"inputs": [
+			{
+				"internalType": "string",
+				"name": "_name",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "_kind",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "_expire",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "_preserve",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "_location",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "_price",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "_area",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "_pack",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "_benefit",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "_processProduce",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "_temperature",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "_light",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "_humidityAir",
+				"type": "string"
+			},
+			{
+				"internalType": "string",
+				"name": "_humiditySoil",
+				"type": "string"
+			}
+		],
+		"stateMutability": "nonpayable",
+		"type": "constructor"
+	},
+	{
 		"inputs": [],
-		"name": "getDate",
+		"name": "area",
 		"outputs": [
 			{
 				"internalType": "string",
@@ -72,7 +278,163 @@ const abi = [
 	},
 	{
 		"inputs": [],
-		"name": "getId",
+		"name": "benefit",
+		"outputs": [
+			{
+				"internalType": "string",
+				"name": "",
+				"type": "string"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "expire",
+		"outputs": [
+			{
+				"internalType": "string",
+				"name": "",
+				"type": "string"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "getArea",
+		"outputs": [
+			{
+				"internalType": "string",
+				"name": "",
+				"type": "string"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "getBenefit",
+		"outputs": [
+			{
+				"internalType": "string",
+				"name": "",
+				"type": "string"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "getExpire",
+		"outputs": [
+			{
+				"internalType": "string",
+				"name": "",
+				"type": "string"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "getHumidityAir",
+		"outputs": [
+			{
+				"internalType": "string",
+				"name": "",
+				"type": "string"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "getHumiditySoil",
+		"outputs": [
+			{
+				"internalType": "string",
+				"name": "",
+				"type": "string"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "getKind",
+		"outputs": [
+			{
+				"internalType": "string",
+				"name": "",
+				"type": "string"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "getLight",
+		"outputs": [
+			{
+				"internalType": "string",
+				"name": "",
+				"type": "string"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "getLocation",
+		"outputs": [
+			{
+				"internalType": "string",
+				"name": "",
+				"type": "string"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "getName",
+		"outputs": [
+			{
+				"internalType": "string",
+				"name": "",
+				"type": "string"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "getPack",
+		"outputs": [
+			{
+				"internalType": "string",
+				"name": "",
+				"type": "string"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "getPreserve",
 		"outputs": [
 			{
 				"internalType": "string",
@@ -88,9 +450,9 @@ const abi = [
 		"name": "getPrice",
 		"outputs": [
 			{
-				"internalType": "uint256",
+				"internalType": "string",
 				"name": "",
-				"type": "uint256"
+				"type": "string"
 			}
 		],
 		"stateMutability": "view",
@@ -98,12 +460,116 @@ const abi = [
 	},
 	{
 		"inputs": [],
-		"name": "getWeight",
+		"name": "getProcessProduce",
 		"outputs": [
 			{
-				"internalType": "uint256",
+				"internalType": "string",
 				"name": "",
-				"type": "uint256"
+				"type": "string"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "getTemperature",
+		"outputs": [
+			{
+				"internalType": "string",
+				"name": "",
+				"type": "string"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "kind",
+		"outputs": [
+			{
+				"internalType": "string",
+				"name": "",
+				"type": "string"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "location",
+		"outputs": [
+			{
+				"internalType": "string",
+				"name": "",
+				"type": "string"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "name",
+		"outputs": [
+			{
+				"internalType": "string",
+				"name": "",
+				"type": "string"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "pack",
+		"outputs": [
+			{
+				"internalType": "string",
+				"name": "",
+				"type": "string"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "preserve",
+		"outputs": [
+			{
+				"internalType": "string",
+				"name": "",
+				"type": "string"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "price",
+		"outputs": [
+			{
+				"internalType": "string",
+				"name": "",
+				"type": "string"
+			}
+		],
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"inputs": [],
+		"name": "processProduce",
+		"outputs": [
+			{
+				"internalType": "string",
+				"name": "",
+				"type": "string"
 			}
 		],
 		"stateMutability": "view",
@@ -115,12 +581,9 @@ const contract = new web3.eth.Contract(abi, contractAddress);
 const urlParams = new URLSearchParams(window.location.search);
 
 async function getContractData() {
-  const date = urlParams.get('date');
-  const id = await contract.methods.getId().call();
-  const price = await contract.methods.getPrice().call();
+  const price = await contract.methods.getArea().call();
   const weight = await contract.methods.getWeight().call();
 
-  document.getElementById("id_product").innerHTML = "<span class='fw-normal'>" + id + "</span>";
   document.getElementById("date").innerHTML = "Ngày thu hoạch: <span class='fw-normal'>" + date + "</span>";
   document.getElementById("price").innerHTML = "Giá: <span class='fw-normal'>" + price + "</span>";
   document.getElementById("weight").innerHTML = "Quy cách đóng gói: <span class='fw-normal'>" + "HỘP " + weight + " G" + "</span>";
