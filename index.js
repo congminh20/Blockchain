@@ -591,9 +591,7 @@ async function getContractData() {
 	const pack = await contract.methods.getPack().call();
 	const benefit = await contract.methods.getBenefit().call();
 	const processProduce = await contract.methods.getProcessProduce().call();
-
-	console.log(name);
-	console.log(benefit);
+	const date = urlParams.get('date');
 
 	document.getElementById("name").innerHTML = "Tên sản phẩm: <span class='fw-normal'>" + name + "</span>";
 	document.getElementById("kind").innerHTML = "Loại: <span class='fw-normal'>" + kind + "</span>";
@@ -605,6 +603,8 @@ async function getContractData() {
 	document.getElementById("pack").innerHTML = "Quy cách đóng gói: <span class='fw-normal'>" + pack + "</span>";
 	document.getElementById("benefit").innerHTML = "Chức năng / công dụng sản phẩm: <span class='fw-normal'>" + benefit + "</span>";
 	document.getElementById("processProduce").innerHTML = "Quy trình sản xuất: <span class='fw-normal'>" + processProduce + "</span>";
+	document.getElementById("date").innerHTML = "Ngày thu hoạch: <span class='fw-normal'>" + date + "</span>";
+
 }
 getContractData();
 
