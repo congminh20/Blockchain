@@ -581,14 +581,30 @@ const contract = new web3.eth.Contract(abi, contractAddress);
 const urlParams = new URLSearchParams(window.location.search);
 
 async function getContractData() {
-  const price = await contract.methods.getArea().call();
-  const weight = await contract.methods.getWeight().call();
+	const name = await contract.methods.getName().call();
+	const kind = await contract.methods.getKind().call();
+	const expire = await contract.methods.getExpire().call();
+	const preserve = await contract.methods.getPreserve().call();
+	const location = await contract.methods.getLocation().call();
+	const price = await contract.methods.getPrice().call();
+	const area = await contract.methods.getArea().call();
+	const pack = await contract.methods.getPack().call();
+	const benefit = await contract.methods.getBenefit().call();
+	const processProduce = await contract.methods.getProcessProduce().call();
 
-  document.getElementById("date").innerHTML = "Ngày thu hoạch: <span class='fw-normal'>" + date + "</span>";
-  document.getElementById("price").innerHTML = "Giá: <span class='fw-normal'>" + price + "</span>";
-  document.getElementById("weight").innerHTML = "Quy cách đóng gói: <span class='fw-normal'>" + "HỘP " + weight + " G" + "</span>";
+	console.log(name);
+	console.log(benefit);
+
+	document.getElementById("name").innerHTML = "Tên sản phẩm: <span class='fw-normal'>" + name + "</span>";
+	document.getElementById("kind").innerHTML = "Loại: <span class='fw-normal'>" + kind + "</span>";
+	document.getElementById("expire").innerHTML = "Hạn sử dụng: <span class='fw-normal'>" + expire + "</span>";
+	document.getElementById("preserve").innerHTML = "Phương pháp bảo quản: <span class='fw-normal'>" + preserve + "</span>";
+	document.getElementById("location").innerHTML = "Vị trí: <span class='fw-normal'>" + location + "</span>";
+	document.getElementById("price").innerHTML = "Giá: <span class='fw-normal'>" + price + "</span>";
+	document.getElementById("area").innerHTML = "Diện tích: <span class='fw-normal'>" + area + "</span>";
+	document.getElementById("pack").innerHTML = "Quy cách đóng gói: <span class='fw-normal'>" + pack + "</span>";
+	document.getElementById("benefit").innerHTML = "Chức năng / công dụng sản phẩm: <span class='fw-normal'>" + benefit + "</span>";
+	document.getElementById("processProduce").innerHTML = "Quy trình sản xuất: <span class='fw-normal'>" + processProduce + "</span>";
 }
-
-
 getContractData();
 
