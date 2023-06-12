@@ -592,7 +592,9 @@ async function getContractData() {
 	const benefit = await contract.methods.getBenefit().call();
 	const processProduce = await contract.methods.getProcessProduce().call();
 	const date = urlParams.get('date');
+	const id_product = urlParams.get('id');
 
+	document.getElementById("id_product").innerHTML = "Mã truy xuất: <span class='fw-normal'>" + id_product + "</span>";
 	document.getElementById("name").innerHTML = "Tên sản phẩm: <span class='fw-normal'>" + name + "</span>";
 	document.getElementById("kind").innerHTML = "Loại: <span class='fw-normal'>" + kind + "</span>";
 	document.getElementById("expire").innerHTML = "Hạn sử dụng: <span class='fw-normal'>" + expire + "</span>";
